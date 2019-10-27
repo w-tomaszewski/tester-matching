@@ -32,7 +32,7 @@ public class TesterMatchingControllerTest {
     @Test
     public void shouldMatchExperiencedTestersBySearchCriteria() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                .get(String.format("/testermatching/matching/experience?deviceCriteria1=%s&countryCriteria1=%s", TEST_DEVICE, TEST_COUNTRY))
+                .get(String.format("/tester/matching/experience?deviceCriteria1=%s&countryCriteria1=%s", TEST_DEVICE, TEST_COUNTRY))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
@@ -43,7 +43,7 @@ public class TesterMatchingControllerTest {
     @Test
     public void shouldReturnCountryOptions() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                .options("/testermatching/countries")
+                .options("/tester/countries")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
@@ -53,7 +53,7 @@ public class TesterMatchingControllerTest {
     @Test
     public void shouldReturnDeviceOptions() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                .options("/testermatching/devices")
+                .options("/tester/devices")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
