@@ -1,0 +1,22 @@
+<div class="centered-vertical-container">
+    <div class="centered-vertical-item">
+        <app-search-criteria class="search-criteria" *ngIf="deviceOptions" [placeholder]="'Select devices'"
+            [data]="deviceOptions" (onSelect)="onDeviceSelect($event)">
+        </app-search-criteria>
+        <app-search-criteria class="search-criteria" *ngIf="countryOptions" [placeholder]="'Select countries'"
+            [data]="countryOptions" (onSelect)="onCountrySelect($event)">
+        </app-search-criteria>
+    </div>
+
+    <div class="centered-vertical-item">
+        <button color="primary" mat-raised-button [disabled]="shouldBtnDisabled" 
+        (click)="onTesterMatchingClick()" matTooltip="Experience is measured by the number of
+        Bug(s) a Tester filed for the given Device(s)">Tester match</button>
+    </div>
+
+    <div class="centered-vertical-item">
+        <app-match-result *ngIf="matchingTesterResults" [matchingResults]="matchingTesterResults">
+        </app-match-result>
+    </div>
+
+</div>

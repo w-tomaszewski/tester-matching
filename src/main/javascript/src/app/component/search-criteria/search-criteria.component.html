@@ -1,0 +1,16 @@
+<mat-form-field>
+  <mat-label>{{ placeholder }}</mat-label>
+  <mat-select [formControl]="optionsControl" multiple floatlLabel="never">
+    <mat-select-trigger>
+      {{currentSelection ? currentSelection[0] : ''}}
+      <span *ngIf="currentSelection?.length > 1" class="hide-selection-info">
+        (+{{currentSelection.length - 1}} others)
+      </span>
+    </mat-select-trigger>
+    <mat-option class="select-all-option" #selectAllRef (click)="selectAllOptionClicked()" [value]="0">Select all
+    </mat-option>
+    <mat-option *ngFor="let item of data" [value]="item">
+      {{item}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

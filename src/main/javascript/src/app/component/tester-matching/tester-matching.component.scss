@@ -1,0 +1,17 @@
+.centered-vertical-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.centered-vertical-item {
+    height: 35;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.search-criteria {
+    padding: 20px;
+}
+
