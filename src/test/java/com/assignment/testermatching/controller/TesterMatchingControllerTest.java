@@ -43,7 +43,7 @@ public class TesterMatchingControllerTest {
     @Test
     public void shouldReturnCountryOptions() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                .options("/tester/countries")
+                .get("/tester/countries")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
@@ -53,7 +53,7 @@ public class TesterMatchingControllerTest {
     @Test
     public void shouldReturnDeviceOptions() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                .options("/tester/devices")
+                .get("/tester/devices")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
