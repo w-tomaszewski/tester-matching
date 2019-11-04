@@ -36,12 +36,12 @@ public class TesterMatchingController {
         return new ResponseEntity<>(testerMatchingService.matchExperiencedTestersBySearchCriteria(searchCriteriaConverter.convert(searchCriteria)), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/countries", method = RequestMethod.OPTIONS)
+    @RequestMapping(value = "/countries", method = RequestMethod.GET)
     public ResponseEntity<CountryOptionsDto> getCountryOptions() {
         return new ResponseEntity<>(testerMatchingService.getCountryOptions(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/devices", method = RequestMethod.OPTIONS)
+    @RequestMapping(value = "/devices", method = RequestMethod.GET)
     public ResponseEntity<DeviceOptionsDto> getDeviceOptions() {
         return new ResponseEntity<>(testerMatchingService.getDeviceOptions(), HttpStatus.OK);
     }

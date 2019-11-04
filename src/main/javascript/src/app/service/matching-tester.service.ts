@@ -18,12 +18,12 @@ export class MatchingTesterService {
 
   getDevices(): Observable<DeviceOptions> {
       const restURL = environment.apiServer + environment.apiMethods.optionDevices;
-      return this.http.options<DeviceOptions>(restURL);
+      return this.http.get<DeviceOptions>(restURL);
   }
 
   getCountries(): Observable<CountryOptions> {
     const restURL = environment.apiServer + environment.apiMethods.optionCountries;
-    return this.http.options<CountryOptions>(restURL);
+    return this.http.get<CountryOptions>(restURL);
   }
 
   getTesterMatching(deviceCriteria: Array<string>, countryCriteria: Array<string>): Observable<MatchingTesters> {
