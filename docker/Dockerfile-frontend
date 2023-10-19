@@ -1,0 +1,16 @@
+FROM node:12.14.0 as front-end-builder
+
+WORKDIR /app
+
+COPY src/main/javascript .
+RUN npm install
+RUN npm run build
+
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+
+RUN rm -rf ./*
+
+COPY --from=front-end-builder /app/dist/javascript .
+
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
